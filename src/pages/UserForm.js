@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import swal from "sweetalert";
 import "./form.css";
+import validator from "validator";
 import { redirect, useNavigate } from "react-router-dom";
 
 const UserForm = () => {
