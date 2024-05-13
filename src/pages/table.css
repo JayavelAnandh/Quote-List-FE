@@ -66,4 +66,13 @@
     max-width: 200px;
     padding: 8px;
   }
+
+  .redirectionbtn {
+    padding: 10px 20px;
+    background-color: #a8197f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 }

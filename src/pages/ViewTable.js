@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./table.css";
+import { useNavigate } from "react-router-dom";
 const ViewTable = () => {
   const [data, setData] = useState([]);
   const [sortBy, setSortBy] = useState("");
+  const navigate = useNavigate();
   const getData = async () => {
     const res = await fetch(`http://localhost:8080/report?sort=${sortBy}`, {
       method: "GET",
     });
     const response = await res.json();
-    console.log("Response", response);
     response && setData([].concat(response));
     return response;
   };
@@ -16,7 +17,10 @@ const ViewTable = () => {
   useEffect(() => {
     getData();
   }, [sortBy]);
-
+  const routeChange = () => {
+    let path = `/`;
+    navigate(path);
+  };
   return (
     <div>
       <div>
@@ -58,6 +62,17 @@ const ViewTable = () => {
             })}
           </tbody>
         </table>
+      </div>
+      <div>
+        <button
+          type="button"
+          onClick={() => {
+            routeChange();
+          }}
+          className="redirectionbtn"
+        >
+          Home
+        </button>
       </div>
     </div>
   );
