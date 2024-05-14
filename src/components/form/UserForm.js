@@ -58,6 +58,7 @@ const UserForm = () => {
   return (
     <div className="form-head">
       <div className="form-container">
+        <h2>Quote Form</h2>
         <form onSubmit={(e) => handleSubmit(e)}>
           <Input
             data={formData}
