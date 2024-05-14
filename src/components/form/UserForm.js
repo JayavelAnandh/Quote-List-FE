@@ -94,7 +94,7 @@ const UserForm = () => {
             navigate("/report");
           }}
         >
-          Reports <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          Reports <i className="fa fa-arrow-right" aria-hidden="true"></i>
         </button>
       </div>
     </div>

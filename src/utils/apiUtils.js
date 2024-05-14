@@ -48,9 +48,12 @@ export const getReport = async (sortBy) => {
 
 export const checkAvailability = async (email) => {
   try {
-    const res = await fetch(`https://quote-list.onrender.com/email/${email}`, {
-      method: "GET",
-    });
+    const res = await fetch(
+      `https://quote-list.onrender.com/report/email/${email}`,
+      {
+        method: "GET",
+      }
+    );
     return await res.json();
   } catch (error) {
     return error;
