@@ -1,12 +1,15 @@
 export const addQuote = async (data) => {
   try {
-    const res = await fetch("http://localhost:8080/report/addReport/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    const res = await fetch(
+      "https://quote-list.onrender.com/report/addReport/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
     return await res.json();
   } catch (error) {
     return error;
@@ -14,12 +17,15 @@ export const addQuote = async (data) => {
 };
 export const deleteQuote = async (id) => {
   try {
-    const res = await fetch(`http://localhost:8080/report/delete/${id}`, {
-      method: "DELETE",
-      headers: {
-        "content-Type": "application/json",
-      },
-    });
+    const res = await fetch(
+      `https://quote-list.onrender.com/report/delete/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "content-Type": "application/json",
+        },
+      }
+    );
     return await res.json();
   } catch (error) {
     return error;
@@ -28,9 +34,12 @@ export const deleteQuote = async (id) => {
 
 export const getReport = async (sortBy) => {
   try {
-    const res = await fetch(`http://localhost:8080/report?sort=${sortBy}`, {
-      method: "GET",
-    });
+    const res = await fetch(
+      `https://quote-list.onrender.com/report?sort=${sortBy}`,
+      {
+        method: "GET",
+      }
+    );
     return await res.json();
   } catch (error) {
     return error;
@@ -39,7 +48,7 @@ export const getReport = async (sortBy) => {
 
 export const checkAvailability = async (email) => {
   try {
-    const res = await fetch(`http://localhost:8080/report/email/${email}`, {
+    const res = await fetch(`https://quote-list.onrender.com/email/${email}`, {
       method: "GET",
     });
     return await res.json();
