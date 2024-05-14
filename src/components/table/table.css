@@ -1,19 +1,30 @@
 .table-container {
   max-width: 100%;
   overflow-x: auto;
+  overflow-y: auto;
   padding: 20px;
 }
 
-.drop-down {
+.drop-down-container {
   display: flex;
-  justify-content: start;
-  margin: 20px;
-  margin-left: 40px;
+  justify-content: end;
+}
+
+.drop-down {
+  margin-right: 40px;
+  margin-top: 20px;
   border: 0.5px solid gray;
   height: 30px;
   width: 100px;
-  border-radius: 10px;
+  border-radius: 6px;
   padding: 2px;
+  background-color: #a8197f;
+  color: #ffffff;
+}
+
+.drop-down option {
+  background-color: #ccc;
+  color: #0d0d0d;
 }
 
 .data-table {
@@ -54,6 +65,11 @@
   background-color: #e2e2e2;
   color: #0d0d0d;
   font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+.btn-delete {
+  cursor: pointer;
+  color: red;
 }
 
 @media screen and (max-width: 768px) {
