@@ -56,7 +56,7 @@ const UserForm = () => {
   };
 
   return (
-    <div>
+    <div className="form-head">
       <div className="form-container">
         <form onSubmit={(e) => handleSubmit(e)}>
           <Input

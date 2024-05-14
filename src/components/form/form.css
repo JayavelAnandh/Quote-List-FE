@@ -1,5 +1,12 @@
+.form-head {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
 .form-container {
-    max-width: 500px;
+    max-width: 40vw;
+    min-width: 40vw;
     margin: 50px auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -45,8 +52,9 @@
 
 @media screen and (max-width: 768px) {
     .form-container {
-        max-width: 100%;
         padding: 15px;
+        max-width: 70vw;
+        min-width: 70vw;
     }
 
     .form-container label {
@@ -57,7 +65,14 @@
     .form-container input {
         width: 100%;
     }
+}
 
+@media screen and (max-width : 1000px) {
+    .form-container {
+        padding: 15px;
+        max-width: 80vw;
+        min-width: 80vw;
+    }
 }
 
 .redirectionbtn {
