@@ -9,7 +9,7 @@ const ViewTable = () => {
   const [sortBy, setSortBy] = useState("");
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 12; // You can adjust this value as needed
+  const itemsPerPage = 10; // You can adjust this value as needed
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
   const handleNextPage = () => {
@@ -120,11 +120,12 @@ const ViewTable = () => {
       </div>
       <div className="pagination-container">
         <button onClick={handlePreviousPage} disabled={currentPage === 1}>
-          Previous Page
+          <i className="fa fa-chevron-left" aria-hidden="true"></i> Previous
+          Page
         </button>
         <span>{`Page ${currentPage} of ${totalPages}`}</span>
         <button onClick={handleNextPage} disabled={currentPage === totalPages}>
-          Next Page
+          Next Page <i className="fa fa-chevron-right" aria-hidden="true"></i>
         </button>
       </div>
     </div>

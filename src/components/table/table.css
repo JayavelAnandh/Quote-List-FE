@@ -72,6 +72,20 @@
   color: red;
 }
 
+.pagination-container {
+  margin-top: 3vh;
+}
+
+.pagination-container button {
+  padding: 3px;
+  margin: 3px;
+  background-color: #a8197f;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
 
   .data-table th,
