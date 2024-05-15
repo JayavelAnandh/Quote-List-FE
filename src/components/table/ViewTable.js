@@ -8,6 +8,17 @@ const ViewTable = () => {
   const [data, setData] = useState([]);
   const [sortBy, setSortBy] = useState("");
   const navigate = useNavigate();
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12; // You can adjust this value as needed
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePreviousPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
 
   const getData = async () => {
     try {
@@ -87,7 +98,12 @@ const ViewTable = () => {
             </tr>
           </thead>
           <tbody>
-            <TableRow data={data} handleRemove={handleRemove} />
+            <TableRow
+              data={data}
+              handleRemove={handleRemove}
+              startIndex={(currentPage - 1) * itemsPerPage}
+              itemsPerPage={itemsPerPage}
+            />
           </tbody>
         </table>
       </div>
@@ -100,6 +116,15 @@ const ViewTable = () => {
           className="redirectionbtn"
         >
           <i className="fa fa-arrow-left" aria-hidden="true"></i> Form
+        </button>
+      </div>
+      <div className="pagination-container">
+        <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+          Previous Page
+        </button>
+        <span>{`Page ${currentPage} of ${totalPages}`}</span>
+        <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+          Next Page
         </button>
       </div>
     </div>

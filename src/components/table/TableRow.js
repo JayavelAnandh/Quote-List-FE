@@ -1,12 +1,12 @@
 import React from "react";
 
-const TableRow = ({ data, handleRemove }) => {
+const TableRow = ({ data, handleRemove, startIndex, itemsPerPage }) => {
   return (
     <>
-      {data.map((val, idx) => {
+      {data.slice(startIndex, startIndex + itemsPerPage).map((val, idx) => {
         return (
           <tr key={idx}>
-            <td>{idx + 1}</td>
+            <td>{idx + startIndex + 1}</td>
             <td>{val.name}</td>
             <td>{val.email}</td>
             <td>{val.quoteCount}</td>
