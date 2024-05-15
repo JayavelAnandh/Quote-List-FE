@@ -47,14 +47,11 @@
 }
 
 .data-table th {
-  background-color: #f0f0f0;
+  background-color: #a8197f;
   font-weight: bold;
   font-family: 'Times New Roman', Times, serif;
-  color: #202020;
-}
-
-.data-table tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+  font-stretch: expanded;
+  color: #eaf2f8;
 }
 
 .data-table tbody tr:hover {
@@ -77,12 +74,12 @@
 }
 
 .pagination-container button {
-  padding: 3px;
+  padding: 8px 15px;
   margin: 3px;
   background-color: #a8197f;
   color: #fff;
   border: none;
-  border-radius: 2px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
